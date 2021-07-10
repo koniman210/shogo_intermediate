@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/**
+*【レスポンシブ対応便利】
+* 以下の記述をすることで自動でサイズ調整を行える
+* 1rem ＝10px
+* htmlタグに設定されているfont-size基準として算出
+* デザインカンプが10px なら 1.0rem でコーディングする
+* 切り替わるサイズは560px,960pxに設定( md , lg )
+* 例：@include mq($breakpoint){}
+* 参考：https://note.com/yanada_nomad/n/n9e5e10817748
+*/
+html {
+  font-size: calc( 10px + (14 - 10) * ( (100vw - 560px) / (960 - 560) ));
+}
+
+@media screen and (min-width: 0px) and (max-width: 560px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/**
+ * メディアクエリ用
+ * 使えるブレイクポイントは md | lg
+ */

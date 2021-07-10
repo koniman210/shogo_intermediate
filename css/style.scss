@@ -1,0 +1,53 @@
+/**
+*【レスポンシブ対応便利】
+* 以下の記述をすることで自動でサイズ調整を行える
+* 1rem ＝10px
+* htmlタグに設定されているfont-size基準として算出
+* デザインカンプが10px なら 1.0rem でコーディングする
+* 切り替わるサイズは560px,960pxに設定( md , lg )
+* 例：@include mq($breakpoint){}
+* 参考：https://note.com/yanada_nomad/n/n9e5e10817748
+*/
+
+// フォントサイズが自動で変化する最小、最大画面幅(px)
+$font_scale_minimum_width: 560;
+$font_scale_maximum_width: 960;
+
+// フォントサイズ自動変化機構の最小、最大画面サイズの時のベースフォントサイズ(px)
+// PCのデザインしかない場合はPCのデザインサイズの/1.4をすればsp版になる
+$font_scale_minimum_size: 10;
+$font_scale_maximum_size: 14;
+html {
+  // ▼▼▼▼ ここから、ベースのフォントサイズをviewportの横幅に従って特定の範囲で自動的に調整する仕組み ▼▼▼▼
+  font-size: calc(
+    #{$font_scale_minimum_size}px +
+      (#{$font_scale_maximum_size} - #{$font_scale_minimum_size}) *
+      (
+        (100vw - #{$font_scale_minimum_width}px) /
+          (#{$font_scale_maximum_width} - #{$font_scale_minimum_width})
+      )
+  );
+  // 560~960まで、自動で大きくなる。960~は$font_scale_maximum_sizeに指定した値
+  // ↓↓↓ スマホを想定する560サイズ以下でデザインカンプが来るので 10px なら 1.0rem でコーディングする
+  @media screen and (min-width: 0px) and (max-width: #{$font_scale_minimum_width}px) {
+    font-size: #{$font_scale_minimum_size}px;
+  }
+  // ↓↓↓ PCをイメージする960px以上になったら、元のフォントサイズの1.4倍ぐらいに全て拡大される
+  @media screen and (min-width: #{$font_scale_maximum_width}px) {
+    font-size: #{$font_scale_maximum_size}px;
+  }
+  // ▲▲▲▲ ここまで、ベースのフォントサイズをviewportの横幅に従って特定の範囲で自動的に調整する仕組み ▲▲▲▲
+}
+// メディアクエリのためのブレイクポイント
+$breakpoints: ('md': 'screen and (min-width: #{$font_scale_minimum_width}px)',
+  'lg': 'screen and (min-width: #{$font_scale_maximum_width}px)',
+) !default;
+/**
+ * メディアクエリ用
+ * 使えるブレイクポイントは md | lg
+ */
+ @mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

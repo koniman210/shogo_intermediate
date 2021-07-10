@@ -1,0 +1,1 @@
+html{font-size:calc( 10px + (14 - 10) * ( (100vw - 560px) / (960 - 560) ))}@media screen and (min-width: 0px) and (max-width: 560px){html{font-size:10px}}@media screen and (min-width: 960px){html{font-size:14px}}
