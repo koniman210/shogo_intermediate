@@ -10,7 +10,7 @@
 * 参考：https://note.com/yanada_nomad/n/n9e5e10817748
 */
 html {
-  font-size: calc( 10px + (14 - 10) * ( (100vw - 560px) / (960 - 560) ));
+  font-size: calc(10px + (14 - 10) * ((100vw - 560px) / (960 - 560)));
 }
 
 @media screen and (min-width: 0px) and (max-width: 560px) {
@@ -29,3 +29,82 @@ html {
  * メディアクエリ用
  * 使えるブレイクポイントは md | lg
  */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: normal;
+  color: #333333;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  padding: 0;
+}
+
+.header-container {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  position: sticky;
+  top: 0;
+}
+
+.title-bar {
+  height: 6.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.title-bar .title-items {
+  display: flex;
+}
+
+.title-bar .title-items.-center {
+  padding-right: 46px;
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+.title-bar > .title-items.-left > .logo {
+  margin: auto;
+  width: 47px;
+  height: 47px;
+}
+
+.title-bar > .title-items.-left > .title {
+  padding-left: 1rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.title-bar > .title-items.-center > .menu:not(:nth-last-child(1)) {
+  display: block;
+  padding-right: 46px;
+}
+
+.title-bar > .title-items.-right > .questionbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  font-size: 1rem;
+  color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  background: linear-gradient(to right, #FA41CC, #6020B0);
+  padding: 0.5rem 2.5rem;
+}

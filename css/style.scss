@@ -17,37 +17,133 @@ $font_scale_maximum_width: 960;
 // PCのデザインしかない場合はPCのデザインサイズの/1.4をすればsp版になる
 $font_scale_minimum_size: 10;
 $font_scale_maximum_size: 14;
+
 html {
   // ▼▼▼▼ ここから、ベースのフォントサイズをviewportの横幅に従って特定の範囲で自動的に調整する仕組み ▼▼▼▼
-  font-size: calc(
-    #{$font_scale_minimum_size}px +
-      (#{$font_scale_maximum_size} - #{$font_scale_minimum_size}) *
-      (
-        (100vw - #{$font_scale_minimum_width}px) /
-          (#{$font_scale_maximum_width} - #{$font_scale_minimum_width})
-      )
-  );
+  font-size: calc(#{$font_scale_minimum_size}px + (#{$font_scale_maximum_size} - #{$font_scale_minimum_size}) * ((100vw - #{$font_scale_minimum_width}px) / (#{$font_scale_maximum_width} - #{$font_scale_minimum_width})));
+
   // 560~960まで、自動で大きくなる。960~は$font_scale_maximum_sizeに指定した値
   // ↓↓↓ スマホを想定する560サイズ以下でデザインカンプが来るので 10px なら 1.0rem でコーディングする
   @media screen and (min-width: 0px) and (max-width: #{$font_scale_minimum_width}px) {
     font-size: #{$font_scale_minimum_size}px;
   }
+
   // ↓↓↓ PCをイメージする960px以上になったら、元のフォントサイズの1.4倍ぐらいに全て拡大される
   @media screen and (min-width: #{$font_scale_maximum_width}px) {
     font-size: #{$font_scale_maximum_size}px;
   }
+
   // ▲▲▲▲ ここまで、ベースのフォントサイズをviewportの横幅に従って特定の範囲で自動的に調整する仕組み ▲▲▲▲
 }
+
 // メディアクエリのためのブレイクポイント
 $breakpoints: ('md': 'screen and (min-width: #{$font_scale_minimum_width}px)',
   'lg': 'screen and (min-width: #{$font_scale_maximum_width}px)',
 ) !default;
+
 /**
  * メディアクエリ用
  * 使えるブレイクポイントは md | lg
  */
- @mixin mq($breakpoint: md) {
+@mixin mq($breakpoint: md) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
+  }
+}
+
+
+// ここからｃｓｓ書いていく
+// デフォルト
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: normal;
+  color: #333333;
+}
+
+// bodyのデフォルト設定を排除
+body {
+  margin: 0;
+}
+
+// buttonのデフォルト設定を排除
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  padding: 0;
+}
+
+
+// ヘッダー
+.header-container {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  position: sticky;
+  top: 0;
+}
+
+// タイトルバー
+.title-bar {
+  height: 6.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+
+  .title-items {
+    display: flex;
+
+    // menu
+    &.-center {
+      padding-right: 46px;
+      font-weight: bold;
+      font-size: 1.15rem;
+    }
+  }
+}
+
+// ロゴとタイトル
+.title-bar>.title-items.-left {
+
+  >.logo {
+    margin: auto;
+    width: 47px;
+    height: 47px;
+  }
+
+  >.title {
+    padding-left: 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+}
+
+// メニュー
+.title-bar>.title-items.-center>.menu:not(:nth-last-child(1)) {
+  display: block;
+  padding-right: 46px;
+}
+
+// お問い合わせボタン
+.title-bar>.title-items.-right {
+>.questionbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    font-size: 1rem;
+    color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    background: linear-gradient(to right, #FA41CC, #6020B0);
+    padding: 0.5rem 2.5rem;
   }
 }
