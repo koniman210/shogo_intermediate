@@ -29,6 +29,10 @@ html {
  * メディアクエリ用
  * 使えるブレイクポイントは md | lg
  */
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -295,6 +299,7 @@ button {
   font-weight: bold;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 5rem;
 }
 
 .sec-price > .caution {
@@ -378,12 +383,87 @@ button {
 .question-table > .title, .question-table > .data {
   font-size: 1rem;
   font-weight: bold;
-  text-align: center;
   padding: 2.5rem 1.8rem;
   border-bottom: 1px solid #E5E5E5;
   /* テーブルの上の線 */
 }
 
+.question-table > .title {
+  text-align: center;
+}
+
 .question-table > .data {
   background-color: #F2F2F2;
+}
+
+.sec-blog {
+  padding-bottom: 6.15rem;
+  background-color: #EEFBFB;
+}
+
+.sec-blog > .title {
+  line-height: 3.3rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 4rem;
+}
+
+.sec-blog > .subtitle {
+  color: #3BA6C9;
+  font-size: 1.15rem;
+  line-height: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3.85rem;
+}
+
+.blog-list {
+  display: flex;
+  padding: 1.5rem 5rem 0 5rem;
+}
+
+.blog-card {
+  width: 27.5rem;
+  height: 27.5rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.blog-card > .image {
+  display: block;
+  height: 18.5rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog-card > .content-area {
+  height: 9rem;
+  padding: 1rem 2.2rem 0 1.28rem;
+}
+
+.blog-card > .content-area > .title {
+  margin: 0;
+  font-size: 1.27rem;
+  font-weight: bold;
+  line-height: 1.85rem;
+  height: calc(1.85rem * 3);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.blog-card > .content-area > .date {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+  margin: 0;
+}
+
+.blog-card:not(:first-child) {
+  margin-left: 2.15rem;
 }

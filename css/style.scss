@@ -54,6 +54,9 @@ $breakpoints: ('md': 'screen and (min-width: #{$font_scale_minimum_width}px)',
 
 // ここからｃｓｓ書いていく
 // デフォルト
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   width: 100%;
@@ -345,6 +348,8 @@ button {
     font-weight: bold;
     text-align: center;
     margin-top: 0;
+    margin-bottom: 5rem;
+
   }
   >.caution{
     font-size: 1.15rem;
@@ -419,15 +424,85 @@ border: 1px solid #E5E5E5; /* テーブルの上の線 */
   >.title,>.data{
     font-size: 1rem;
     font-weight: bold;
-    text-align: center;
     padding: 2.5rem 1.8rem;
     border-bottom: 1px solid #E5E5E5; /* テーブルの上の線 */
 
   }
   >.title{
+    text-align: center;
     
   }
   >.data{
 background-color: #F2F2F2;
   }
+}
+.sec-blog{
+  padding-bottom: 6.15rem;
+  background-color: #EEFBFB;
+  
+    >.title {
+      line-height: 3.3rem;
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0;
+      padding-top: 4rem;
+    }
+  
+    >.subtitle {
+      color: #3BA6C9;
+      font-size: 1.15rem;//16px
+      line-height: 1.7rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 3.85rem;
+    }
+  }
+.blog-list{
+  display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  padding: 1.5rem 5rem 0 5rem;
+}
+.blog-card{
+  width: 27.5rem;
+  height: 27.5rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+  >.image{
+    display: block;
+    height: 18.5rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  >.content-area{
+    height: 9rem;
+
+    padding: 1rem 2.2rem 0 1.28rem;
+    >.title{
+      margin: 0;
+      font-size: 1.27rem;//18px
+      font-weight: bold;
+      line-height: 1.85rem;//26px
+      height: calc(1.85rem * 3);
+      // 3行以上は....にする
+      display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    word-break: break-all;
+    }
+    >.date{
+      width: 100%;
+      text-align: right;
+
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
+.blog-card:not(:first-child){
+  margin-left: 2.15rem;
 }
