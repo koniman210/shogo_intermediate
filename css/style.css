@@ -31,6 +31,8 @@ html {
  */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -380,7 +382,8 @@ button {
   /* テーブルの上の線 */
 }
 
-.question-table > .title, .question-table > .data {
+.question-table > .title,
+.question-table > .data {
   font-size: 1rem;
   font-weight: bold;
   padding: 2.5rem 1.8rem;
@@ -466,4 +469,38 @@ button {
 
 .blog-card:not(:first-child) {
   margin-left: 2.15rem;
+}
+
+.accordion-menu {
+  width: 66%;
+  line-height: 1.85rem;
+  margin: 0 auto;
+  border: 1px solid #E5E5E5;
+  /* テーブルの上の線 */
+}
+
+.accordion-menu > .title {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1.8rem 2.5rem;
+  border-bottom: 1px solid #E5E5E5;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion-menu > .content {
+  display: none;
+  background-color: #F2F2F2;
+  font-weight: bold;
+  padding: 1.8rem 2.5rem;
+  border-bottom: 1px solid #E5E5E5;
+  /* テーブルの上の線 */
+  opacity: 1;
+  line-height: 1.85rem;
+  height: auto;
+}
+
+.accordion-menu > .content:first-of-type {
+  display: block;
 }

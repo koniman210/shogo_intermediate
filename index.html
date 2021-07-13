@@ -10,7 +10,7 @@
       integrity="sha512-uMIpMpgk4n6esmgdfJtATLLezuZNRb96YEgJXVeo4diHFOF/gqlgu4Y5fg+56qVYZfZYdiqnAQZlnu4j9501ZQ=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- <link rel="stylesheet" href="./css/reset.css" /> -->
     <link rel="stylesheet" href="./css/style.css" />
     <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css" />
     <link
@@ -155,30 +155,32 @@
       </dl>
       <p class="caution">＊詳細な価格はページや仕様によって異なります</p>
     </section>
+    <!-- 良くある質問 -->
     <section class="sec-question">
       <h2 class="title">よくある質問</h2>
       <p class="subtitle">FAQ</p>
-      <dl class="question-table">
+      <dl class="accordion-menu">
         <dt class="title">
           デザインから一貫してお願いすることは可能でしょうか
         </dt>
-        <dd class="data">
+        <dd class="content">
           ユアコーディングはコーディングに特化したサービスですので、デザインからお受けすることは基本的にありません。<br />
           ただデザインを行う際は提携しているデザイナーと連携して対応させていただきますので、別途ご連絡ください。
         </dd>
         <dt class="title">
           WordPressのカスタマイズをお願いすることも可能でしょうか？
         </dt>
-        <dd class="data">
+        <dd class="content">
           可能です。ただECサイトなどの場合は構築難易度や工数の関係で綿密にヒアリングさせていただきたく思います。
         </dd>
         <dt class="title">コーディングのスピード感が知りたい</dt>
-        <dd class="data">
+        <dd class="content">
           HTMLレスポンシブ込み5ページで1週間、10ページで2週間、WordPressサイト5ページで2週間、10ページで3週間が目安に
           なります。
         </dd>
       </dl>
     </section>
+    <!-- ブログ -->
     <section class="sec-blog">
       <h2 class="title">ブログ</h2>
       <p class="subtitle">Blog</p>
@@ -224,4 +226,44 @@
       </div>
     </section>
   </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!--jQueryの読み込みの後に、以下のコードを追加 -->
+  <script>
+    /**
+     * 【質問】
+     * 満たしたい事、アコーディオンメニュー。クリックしたら開く。一つ目はあけておく。
+     * 2パターン考えた
+     *
+     */
+    // ▼▼▼▼ここからパターン1▼▼▼▼
+    // // アコーディオンのタイトルを全て選択して配列化
+    // const accordionTitles = document.querySelectorAll(
+    //   ".accordion-menu > .title"
+    // );
+    // //  兄弟要素(content)に"is-open"というクラスを付与
+    // function toggle() {
+    //   const content = this.nextElementSibling;
+    //   content.classList.toggle("is-open");
+    // }
+    // // クリックでtoggleメソッド発火
+    // for (let i = 0; i < accordionTitles.length; i++) {
+    //   accordionTitles[i].addEventListener("click", toggle);
+    // }
+    // // ページ読み込み時に一つ目だけはアコーディオンメニュー広げておく。
+    // window.addEventListener("load", defaultOpen);
+    // function defaultOpen() {
+    //   accordionTitles[0].nextElementSibling.classList.toggle("is-open");
+    // }
+    // ▲▲▲▲▲ここまで▲▲▲▲▲
+
+    // ▼▼▼▼ここからパターン2▼▼▼▼
+    // タイトルをクリックすると次の要素(内容)が表示される
+    $(function () {
+      $(".accordion-menu > .title").on("click", function () {
+        console.warn("aaaaaaaa");
+        $(this).next().slideToggle();
+      });
+    });
+    // ▲▲▲▲▲ここまで▲▲▲▲▲
+  </script>
 </html>

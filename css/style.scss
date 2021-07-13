@@ -56,7 +56,10 @@ $breakpoints: ('md': 'screen and (min-width: #{$font_scale_minimum_width}px)',
 // デフォルト
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 html,
 body {
   width: 100%;
@@ -343,7 +346,7 @@ button {
 
   >.subtitle {
     color: #3BA6C9;
-    font-size: 1.15rem;//16px
+    font-size: 1.15rem; //16px
     line-height: 1.7rem;
     font-weight: bold;
     text-align: center;
@@ -351,7 +354,8 @@ button {
     margin-bottom: 5rem;
 
   }
-  >.caution{
+
+  >.caution {
     font-size: 1.15rem;
     font-weight: bold;
     text-align: center;
@@ -363,17 +367,24 @@ button {
     width: 68%;
     background-color: #FFFFFF;
     margin: 0 auto;
-    border-top: 1px solid #E5E5E5; /* テーブルの上の線 */
-    border-left: 1px solid #E5E5E5; /* テーブルの左の線 */
-    display: flex; /* 子要素のdtとddを横並びにする */
-    flex-wrap: wrap; /* 1つのdtとddで1行になるよう改行させる */
+    border-top: 1px solid #E5E5E5;
+    /* テーブルの上の線 */
+    border-left: 1px solid #E5E5E5;
+    /* テーブルの左の線 */
+    display: flex;
+    /* 子要素のdtとddを横並びにする */
+    flex-wrap: wrap;
+    /* 1つのdtとddで1行になるよう改行させる */
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 
     >.title,
     >.data {
-      border-bottom: 1px solid #E5E5E5; /* 各セルの下の線。テーブルの下の線も補える。 */
-      border-right: 1px solid #E5E5E5; /* 各セルの右の線。テーブルの右の線も補える。 */
-      box-sizing: border-box; /* widthの計算を楽にするため */
+      border-bottom: 1px solid #E5E5E5;
+      /* 各セルの下の線。テーブルの下の線も補える。 */
+      border-right: 1px solid #E5E5E5;
+      /* 各セルの右の線。テーブルの右の線も補える。 */
+      box-sizing: border-box;
+      /* widthの計算を楽にするため */
       font-size: 1.15rem;
       font-weight: bold;
       padding-top: 2.5rem;
@@ -389,11 +400,11 @@ button {
       padding-left: 2rem;
       width: calc(100% - 40%);
     }
-  } 
+  }
 }
 
-.sec-question{
-padding-bottom: 6.15rem;
+.sec-question {
+  padding-bottom: 6.15rem;
 
   >.title {
     line-height: 3.3rem;
@@ -406,7 +417,7 @@ padding-bottom: 6.15rem;
 
   >.subtitle {
     color: #3BA6C9;
-    font-size: 1.15rem;//16px
+    font-size: 1.15rem; //16px
     line-height: 1.7rem;
     font-weight: bold;
     text-align: center;
@@ -414,87 +425,99 @@ padding-bottom: 6.15rem;
     margin-bottom: 2.3rem;
   }
 }
-.question-table{
-width: 66%;
-line-height: 1.85rem;
-margin: 0 auto;
-border: 1px solid #E5E5E5; /* テーブルの上の線 */
 
-    // border-left: 1px solid #E5E5E5; /* テーブルの左の線 */
-  >.title,>.data{
+.question-table {
+  width: 66%;
+  line-height: 1.85rem;
+  margin: 0 auto;
+  border: 1px solid #E5E5E5;
+  /* テーブルの上の線 */
+
+  // border-left: 1px solid #E5E5E5; /* テーブルの左の線 */
+  >.title,
+  >.data {
     font-size: 1rem;
     font-weight: bold;
     padding: 2.5rem 1.8rem;
-    border-bottom: 1px solid #E5E5E5; /* テーブルの上の線 */
+    border-bottom: 1px solid #E5E5E5;
+    /* テーブルの上の線 */
 
   }
-  >.title{
+
+  >.title {
     text-align: center;
-    
+
   }
-  >.data{
-background-color: #F2F2F2;
+
+  >.data {
+    background-color: #F2F2F2;
   }
 }
-.sec-blog{
+
+.sec-blog {
   padding-bottom: 6.15rem;
   background-color: #EEFBFB;
-  
-    >.title {
-      line-height: 3.3rem;
-      font-size: 2.2rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 0;
-      padding-top: 4rem;
-    }
-  
-    >.subtitle {
-      color: #3BA6C9;
-      font-size: 1.15rem;//16px
-      line-height: 1.7rem;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 3.85rem;
-    }
+
+  >.title {
+    line-height: 3.3rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 4rem;
   }
-.blog-list{
+
+  >.subtitle {
+    color: #3BA6C9;
+    font-size: 1.15rem; //16px
+    line-height: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 3.85rem;
+  }
+}
+
+.blog-list {
   display: flex;
   // justify-content: space-between;
   // align-items: center;
   padding: 1.5rem 5rem 0 5rem;
 }
-.blog-card{
+
+.blog-card {
   width: 27.5rem;
   height: 27.5rem;
   background-color: #FFFFFF;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 
-  >.image{
+  >.image {
     display: block;
     height: 18.5rem;
     width: 100%;
     object-fit: cover;
   }
-  >.content-area{
+
+  >.content-area {
     height: 9rem;
 
     padding: 1rem 2.2rem 0 1.28rem;
-    >.title{
+
+    >.title {
       margin: 0;
-      font-size: 1.27rem;//18px
+      font-size: 1.27rem; //18px
       font-weight: bold;
-      line-height: 1.85rem;//26px
+      line-height: 1.85rem; //26px
       height: calc(1.85rem * 3);
       // 3行以上は....にする
       display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    word-break: break-all;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      word-break: break-all;
     }
-    >.date{
+
+    >.date {
       width: 100%;
       text-align: right;
 
@@ -503,6 +526,67 @@ background-color: #F2F2F2;
     }
   }
 }
-.blog-card:not(:first-child){
+
+.blog-card:not(:first-child) {
   margin-left: 2.15rem;
+}
+
+// https://webukatu.com/wordpress/blog/6087/ 良くある質問アコーディオンにする
+.accordion-menu {
+  width: 66%;
+  line-height: 1.85rem;
+  margin: 0 auto;
+  border: 1px solid #E5E5E5;
+  /* テーブルの上の線 */
+
+  >.title {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1.8rem 2.5rem;
+    border-bottom: 1px solid #E5E5E5;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  >.content {
+    display: none;
+    background-color: #F2F2F2;
+    font-weight: bold;
+    padding: 1.8rem 2.5rem;
+    border-bottom: 1px solid #E5E5E5;
+    /* テーブルの上の線 */
+    opacity: 1;
+    line-height: 1.85rem;
+    height: auto;
+  }
+
+  //  最初の一つは開いておく
+  >.content:first-of-type {
+    display: block;
+  }
+
+  // 通常時は表示しない
+  // パターン１
+  // >.content {
+  //   line-height: 0;
+  //   height: 0;
+  //   opacity: 0;
+  //   transition-duration: 0.2s;
+  //   display: none;
+  // // is-openが付与されると表示
+  //   &.is-open {
+  //     background-color: #F2F2F2;
+  //     font-weight: bold;
+  //     padding: 1.8rem 2.5rem;
+  //     border-bottom: 1px solid #E5E5E5;
+  //     /* テーブルの上の線 */
+  //     opacity: 1;
+  //     line-height: 1.85rem;
+  //     height: auto;
+  //   }
+  // }
+  // パターン2
+  // 基本は隠しておいてクリックされたら開く
+
 }
