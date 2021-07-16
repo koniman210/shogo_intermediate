@@ -480,7 +480,9 @@ button {
 
 .blog-list {
   display: flex;
-  // justify-content: space-between;
+  margin: 0 auto;
+
+  justify-content: center;
   // align-items: center;
   padding: 1.5rem 5rem 0 5rem;
 }
@@ -589,4 +591,64 @@ button {
   // パターン2
   // 基本は隠しておいてクリックされたら開く
 
+}
+
+.sec-works {
+  padding-bottom: 6.15rem;
+  background-color: #FFF;
+
+  >.title {
+    line-height: 3.3rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 4rem;
+  }
+
+  >.subtitle {
+    color: #3BA6C9;
+    font-size: 1.15rem; //16px
+    line-height: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 3.85rem;
+  }
+
+  // スライド
+  .swiper-slide {
+    width: 23rem;
+  }
+}
+
+.work-card {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  height: 30rem;
+  margin-right: 4rem;
+
+  >.image {
+    border-radius: 8px 8px 0 0;
+    display: block;
+    height: 51%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  >.content-area {
+    height: 49%;
+    padding: 18px;
+
+    >.title {
+      margin-bottom: 30px;
+    }
+
+    >.content {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
 }

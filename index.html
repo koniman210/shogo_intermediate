@@ -185,7 +185,7 @@
       <h2 class="title">ブログ</h2>
       <p class="subtitle">Blog</p>
       <div class="blog-list">
-        <div class="blog-card">
+        <article class="blog-card">
           <img
             src="../shogo_intermediate/img/austin-distel-wawEfYdpkag-unsplash/austin-distel-wawEfYdpkag-unsplash.png"
             alt=""
@@ -195,8 +195,8 @@
             <h3 class="title">サイトをリニューアルオープンしました。</h3>
             <p class="date">2020.01.23</p>
           </div>
-        </div>
-        <div class="blog-card">
+        </article>
+        <article class="blog-card">
           <img
             src="../shogo_intermediate/img/dylan-gillis-KdeqA3aTnBY-unsplash/dylan-gillis-KdeqA3aTnBY-unsplash.png"
             alt=""
@@ -205,12 +205,12 @@
           <div class="content-area">
             <h3 class="title">
               WebサイトでSEO内部施策に適したコー
-              ディングでどれぐらいサイトが早くなるの か検証してみました
+              ディングでどれぐらいサイトが早くなるのか検証してみました
             </h3>
             <p class="date">2020.01.24</p>
           </div>
-        </div>
-        <div class="blog-card">
+        </article>
+        <article class="blog-card">
           <img
             src="../shogo_intermediate/img/brooke-cagle-g1Kr4Ozfoac-unsplash (20)/brooke-cagle-g1Kr4Ozfoac-unsplash.png"
             alt=""
@@ -222,11 +222,85 @@
             </h3>
             <p class="date">2020.01.25</p>
           </div>
-        </div>
+        </article>
+      </div>
+    </section>
+    <section class="sec-works">
+      <h2 class="title">制作実績</h2>
+      <p class="subtitle">WORKS</p>
+      <div class="work-wrapper swiper-container">
+        <ul class="work-contents swiper-wrapper">
+          <li class="work-content swiper-slide">
+            <article class="work-card">
+              <img
+                src="../shogo_intermediate/img/slider/digital-marketing-1433427_1280.png"
+                alt=""
+                class="image"
+              />
+              <div class="content-area">
+                <h3 class="title">
+                  株式会社サンプル様採用サイトのコーディングを行いました！
+                </h3>
+                <p class="content">
+                  採用技術：jQuery,Bootstrap4 <br />
+                  実装期間：6週間<br />
+                  担当コーダー：石井
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="work-content swiper-slide">
+            <article class="work-card">
+              <img
+                src="../shogo_intermediate/img/slider/hal-gatewood-tZc3vjPCk-Q-unsplash.png"
+                alt=""
+                class="image"
+              />
+              <div class="content-area">
+                <h3 class="title">
+                  株式会社サンプル様採用サイトのコーディングを行いました！
+                </h3>
+                <p class="content">
+                  採用技術：jQuery,Bootstrap4 <br />実装期間：2週間
+                  <br />担当コーダー：石井
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="work-content swiper-slide">
+            <article class="work-card">
+              <img
+                src="../shogo_intermediate/img/slider/arnel-hasanovic-MNd-Rka1o0Q-unsplash.png"
+                alt=""
+                class="image"
+              />
+              <div class="content-area">
+                <h3 class="title">
+                  コーディングカンファレンスのイベント LPの制作を行いました！
+                </h3>
+                <p class="content">
+                  採用技術：jQuery,WordPress <br />実装期間：4週間<br />
+                  担当コーダー：石井
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
   </body>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js?ver=3.4.1"
+  ></script>
+
+  <!-- swiper読み込み -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+    integrity="sha512-VHsNaV1C4XbgKSc2O0rZDmkUOhMKPg/rIi8abX9qTaVDzVJnrDGHFnLnCnuPmZ3cNi1nQJm+fzJtBbZU9yRCww=="
+    crossorigin="anonymous"
+  ></script>
   <!--jQueryの読み込みの後に、以下のコードを追加 -->
   <script>
     /**
@@ -265,5 +339,34 @@
       });
     });
     // ▲▲▲▲▲ここまで▲▲▲▲▲
+
+    let mySwiper = new Swiper(".swiper-container", {
+      // 以下にオプションを設定
+      slidesPerView: "auto",
+      loop: true, //最後に達したら先頭に戻る
+      spaceBetween: 56, //レスポンシブ
+      centeredSlides: true, // 中央に配置
+      // allowTouchMove: false,
+
+      speed: 2000,
+      //ページネーション表示の設定
+      pagination: {
+        el: ".swiper-pagination", //ページネーションの要素
+        type: "bullets", //ページネーションの種類
+        clickable: true, //クリックに反応させる
+      },
+      //ナビゲーションボタン（矢印）表示の設定
+      navigation: {
+        nextEl: ".swiper-button-next", //「次へボタン」要素の指定
+        prevEl: ".swiper-button-prev", //「前へボタン」要素の指定
+      },
+      //スクロールバー表示の設定
+      scrollbar: {
+        el: ".swiper-scrollbar", //要素の指定
+      },
+      // autoplay: {
+      //   delay: 5000,
+      // },
+    });
   </script>
 </html>

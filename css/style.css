@@ -425,6 +425,8 @@ button {
 
 .blog-list {
   display: flex;
+  margin: 0 auto;
+  justify-content: center;
   padding: 1.5rem 5rem 0 5rem;
 }
 
@@ -503,4 +505,63 @@ button {
 
 .accordion-menu > .content:first-of-type {
   display: block;
+}
+
+.sec-works {
+  padding-bottom: 6.15rem;
+  background-color: #FFF;
+}
+
+.sec-works > .title {
+  line-height: 3.3rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 4rem;
+}
+
+.sec-works > .subtitle {
+  color: #3BA6C9;
+  font-size: 1.15rem;
+  line-height: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3.85rem;
+}
+
+.sec-works .swiper-slide {
+  width: 23rem;
+}
+
+.work-card {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  height: 30rem;
+  margin-right: 4rem;
+}
+
+.work-card > .image {
+  border-radius: 8px 8px 0 0;
+  display: block;
+  height: 51%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.work-card > .content-area {
+  height: 49%;
+  padding: 18px;
+}
+
+.work-card > .content-area > .title {
+  margin-bottom: 30px;
+}
+
+.work-card > .content-area > .content {
+  font-size: 1rem;
+  font-weight: bold;
 }
