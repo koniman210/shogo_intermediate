@@ -1,0 +1,6 @@
+
+# パッケージ管理
+yarn.lock
+package-lock.json
+# Dependency directories
+node_modules/
