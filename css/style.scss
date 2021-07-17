@@ -652,3 +652,117 @@ button {
     }
   }
 }
+.sec-contact{
+  background: linear-gradient(to right, #05A5FA,#63FBD7,#67FFD6);
+  background: transparent linear-gradient(90deg, #05A5FA 0%, #63FBD7 100%, #67FFD6 100%) 0% 0% no-repeat padding-box;
+padding-bottom: 5rem;
+  
+  >.title {
+    line-height: 3.3rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 4rem;
+    color: #FFF;
+  }
+
+  >.subtitle {
+    color: #FFF;
+    font-size: 1.15rem; //16px
+    line-height: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 3.85rem;
+  }
+
+  .catchcopy{
+    color: #FFF;
+    font-size: 1.15rem; //16px
+    line-height: 1.7rem;
+    // font-weight: bold;
+    text-align: center;
+    margin-bottom: 3.15rem;
+  }
+  .questionbtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    font-size: 1rem;
+    color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    background: linear-gradient(to right, #FA41CC, #6020B0);
+    padding: 0.5rem 2.5rem;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.contact-form{
+  margin: 0 auto;
+  width: 66%;
+  background-color: #FFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+// justify-content: center;
+padding: 2.4rem 4.5rem;
+
+  >.label{
+    display: block;
+    line-height: 1.85rem;//26px
+    margin-bottom: 2.5rem;
+    &::after {
+      content: '必須';
+      font-size: 1rem;
+      color: #FFF;
+      background-color:#0C449B;
+      border-radius: 0.7rem;
+      margin-left: 1.65rem;
+      padding: 5px 16px;
+    }
+  }
+  .input{
+    margin-bottom: 1.8rem;
+    width: 55%;
+    height: 43px;
+    background-color: #EEFBFB;
+    border-radius: 3px;
+    border:none;
+
+  }
+  .textarea{
+    background-color: #EEFBFB;
+    border-radius: 3px;
+    border:none;
+    margin-bottom: 1.8rem;
+
+  }
+  .privacy-form{
+    // margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2.15rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .checkbox{
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 2rem;
+    margin-right: 0.7rem;
+//     position: relative;
+// top: 50%;
+  // margin: auto;
+  }
+  .privacy{
+    text-align: center;
+    line-height: 2rem;
+    
+  }
+  }
+}
