@@ -42,7 +42,7 @@
           <li class="item">お問い合わせ</li>
         </ul>
         <div class="title-items -right">
-          <button class="questionbtn">お問い合わせ</button>
+          <a class="questionbtn" href="#contact">お問い合わせ</a>
         </div>
       </div>
     </header>
@@ -289,7 +289,7 @@
         </ul>
       </div>
     </section>
-    <section class="sec-contact">
+    <section id="contact" class="sec-contact">
       <h2 class="title">お問い合わせ</h2>
       <p class="subtitle">CONTACT</p>
       <p class="catchcopy">
@@ -312,6 +312,14 @@
         <button class="questionbtn">送信する</button>
       </div>
     </section>
+    <footer class="footer-container">
+      <p class="corpname">ユアコーディング</p>
+      <ul class="rule-list">
+        <li class="privacy">プライバシーポリシー</li>
+        <li class="legal">個人商取引法に基づく表記</li>
+      </ul>
+      <small class="copyright">©ユアコーディング, All Rights Reserved.</small>
+    </footer>
   </body>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script
@@ -391,6 +399,25 @@
       // autoplay: {
       //   delay: 5000,
       // },
+    });
+    // スクロール処理
+    $(function () {
+      // #で始まるa要素をクリックした場合に処理
+      $('a[href^="#"]').click(function () {
+        // 移動先を調整する。ヘッダーを固定しているのでヘッダー分ずらす。
+        let adjust = $(".header-container").outerHeight();
+        // スクロールの速度（ミリ秒）
+        let speed = 1000;
+        // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
+        let href = $(this).attr("href");
+        // 移動先を取得 リンク先(href)のidがある要素を探して、targetに代入
+        let target = $(href == "#" || href == "" ? "html" : href);
+        // 移動先を調整 idの要素の位置をoffset()で取得して、positionに代入
+        let position = target.offset().top - adjust;
+        // スムーススクロール linear（等速） or swing（変速）
+        $("body,html").animate({ scrollTop: position }, speed, "swing");
+        return false;
+      });
     });
   </script>
 </html>
