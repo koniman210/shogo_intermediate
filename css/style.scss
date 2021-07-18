@@ -143,6 +143,7 @@ button {
 
 // ロゴとタイトル
 .title-bar>.title-items.-left {
+  align-items: center;
 
   >.logo {
     margin: auto;
@@ -165,18 +166,25 @@ button {
 
 // お問い合わせボタン
 .title-bar>.title-items.-right {
-  >.questionbtn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    appearance: none;
-    font-size: 1rem;
-    color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-    background: linear-gradient(to right, #FA41CC, #6020B0);
-    padding: 0.5rem 2.5rem;
+  // スマホでは表示しない
+  display: none;
+
+  @include mq(lg) {
+    display: flex;
+
+    >.questionbtn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      font-size: 1rem;
+      color: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+      background: linear-gradient(to right, #FA41CC, #6020B0);
+      padding: 0.5rem 2.5rem;
+    }
   }
 }
 
@@ -653,11 +661,12 @@ button {
     }
   }
 }
-.sec-contact{
-  background: linear-gradient(to right, #05A5FA,#63FBD7,#67FFD6);
+
+.sec-contact {
+  background: linear-gradient(to right, #05A5FA, #63FBD7, #67FFD6);
   background: transparent linear-gradient(90deg, #05A5FA 0%, #63FBD7 100%, #67FFD6 100%) 0% 0% no-repeat padding-box;
-padding-bottom: 5rem;
-  
+  padding-bottom: 5rem;
+
   >.title {
     line-height: 3.3rem;
     font-size: 2.2rem;
@@ -678,7 +687,7 @@ padding-bottom: 5rem;
     margin-bottom: 3.85rem;
   }
 
-  .catchcopy{
+  .catchcopy {
     color: #FFF;
     font-size: 1.15rem; //16px
     line-height: 1.7rem;
@@ -686,7 +695,8 @@ padding-bottom: 5rem;
     text-align: center;
     margin-bottom: 3.15rem;
   }
-  .questionbtn{
+
+  .questionbtn {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -702,7 +712,8 @@ padding-bottom: 5rem;
     margin: 0 auto;
   }
 }
-.contact-form{
+
+.contact-form {
   margin: 0 auto;
   width: 66%;
   background-color: #FFF;
@@ -710,64 +721,71 @@ padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   // align-items: center;
-// justify-content: center;
-padding: 2.4rem 4.5rem;
+  // justify-content: center;
+  padding: 2.4rem 4.5rem;
 
-  >.label{
+  >.label {
     display: block;
-    line-height: 1.85rem;//26px
+    line-height: 1.85rem; //26px
     margin-bottom: 2.5rem;
+
     &::after {
       content: '必須';
       font-size: 1rem;
       color: #FFF;
-      background-color:#0C449B;
+      background-color: #0C449B;
       border-radius: 0.7rem;
       margin-left: 1.65rem;
       padding: 5px 16px;
     }
   }
-  .input{
+
+  .input {
     margin-bottom: 1.8rem;
     width: 55%;
     height: 43px;
     background-color: #EEFBFB;
     border-radius: 3px;
-    border:none;
+    border: none;
 
   }
-  .textarea{
+
+  .textarea {
     background-color: #EEFBFB;
     border-radius: 3px;
-    border:none;
+    border: none;
     margin-bottom: 1.8rem;
 
   }
-  .privacy-form{
+
+  .privacy-form {
     // margin: 0 auto;
     text-align: center;
     margin-bottom: 2.15rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .checkbox{
-    width: 1.4rem;
-    height: 1.4rem;
-    line-height: 2rem;
-    margin-right: 0.7rem;
-//     position: relative;
-// top: 50%;
-  // margin: auto;
-  }
-  .privacy{
-    text-align: center;
-    line-height: 2rem;
-    
-  }
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .checkbox {
+      width: 1.4rem;
+      height: 1.4rem;
+      line-height: 2rem;
+      margin-right: 0.7rem;
+      //     position: relative;
+      // top: 50%;
+      // margin: auto;
+    }
+
+    .privacy {
+      text-align: center;
+      line-height: 2rem;
+
+    }
   }
 }
-.footer-container{
+
+.footer-container {
   padding-top: 3.2rem;
   padding-bottom: 3.2rem;
   // margin: 0 auto;
@@ -775,21 +793,24 @@ padding: 2.4rem 4.5rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  >.corpname{
+
+  >.corpname {
     font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
   }
-  .rule-list{
+
+  .rule-list {
     display: flex;
     font-size: 1.15rem;
     font-weight: bold;
     margin-bottom: 3.7rem;
 
-    >.privacy{
-      margin-right:2.15rem ;
+    >.privacy {
+      margin-right: 2.15rem;
     }
-    >.copyright{
+
+    >.copyright {
       font-size: 1rem;
     }
   }
