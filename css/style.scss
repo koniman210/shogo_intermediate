@@ -84,8 +84,9 @@ body {
 }
 
 a {
-  color: #333333;
+  color: inherit;
   text-decoration: none;
+  // cursor: crosshair;
 }
 
 p {
@@ -105,6 +106,220 @@ button {
   outline: none;
   appearance: none;
   padding: 0;
+}
+
+.header-container {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 5;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+.header-inner {
+  height: 6.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: relative;
+
+  @include mq((md)) {
+    // padding:0 3rem;
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+
+  }
+
+  @include mq(lg) {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 75%;
+  }
+}
+
+.header-left {
+  // font-size: 25px;
+  display: flex;
+  align-items: center;
+
+  >.logo {
+    margin: auto;
+    width: 47px;
+    height: 47px;
+  }
+
+  >.title {
+    padding-left: 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+}
+
+
+
+.menu-list {
+  display: flex;
+  font-weight: bold;
+  font-size: 1.15rem;
+
+  color: #fff;
+
+  @include mq(lg) {
+    color: #333333;
+    padding-right: 46px;
+
+    .item:not(:nth-last-child(1)) {
+      padding-right: 46px;
+    }
+
+  }
+}
+
+
+.sm {
+  top: 60px;
+  left: 0px;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  display: none;
+
+  .menu-list {
+    flex-direction: column;
+
+    @include mq(lg) {
+      display: flex;
+    }
+  }
+
+  .menu {
+    text-align: center;
+    border-top: solid 0.5px rgba(255, 255, 255, 0.6);
+    padding: 1.5rem 0;
+  }
+
+
+  @include mq(lg) {
+    // display: block;
+    // position: relative;
+    // background-color: #fff;
+    // top: none;
+  }
+}
+
+#hamburger {
+  background-color: transparent;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  // margin: 0 0 0 auto;
+  height: 60px;
+  width: 60px;
+
+  .icon span {
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 4px;
+    background-color: #333333;
+    // background-color: white;
+    border-radius: 8px;
+    transition: ease 0.75s;
+  }
+
+  .icon span:nth-of-type(1) {
+    top: 16px;
+  }
+
+  .icon span:nth-of-type(2) {
+    top: 28px;
+  }
+
+  .icon span:nth-of-type(3) {
+    bottom: 16px;
+  }
+
+  .close span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 28px;
+  }
+
+  .close span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .close span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+  }
+
+  @include mq(lg) {
+
+    display: none;
+
+
+  }
+}
+
+/**********************************　
+以下、ハンバーガーメニューの設定　
+************************************/
+
+@media (max-width: 959px) {
+
+  .pc {
+    display: none;
+  }
+
+  // #hamburger {
+  //   background-color: transparent;
+  //   display: block;
+  //   position: relative;
+  //   cursor: pointer;
+  //   // margin: 0 0 0 auto;
+  //   height: 60px;
+  //   width: 60px;
+
+  // }
+
+  // .icon span {
+  //   position: absolute;
+  //   left: 15px;
+  //   width: 30px;
+  //   height: 4px;
+  //   background-color: #333333;
+  //   // background-color: white;
+  //   border-radius: 8px;
+  //   transition: ease 0.75s;
+  // }
+
+  // .icon span:nth-of-type(1) {
+  //   top: 16px;
+  // }
+
+  // .icon span:nth-of-type(2) {
+  //   top: 28px;
+  // }
+
+  // .icon span:nth-of-type(3) {
+  //   bottom: 16px;
+  // }
+
+  // .close span:nth-of-type(1) {
+  //   transform: rotate(45deg);
+  //   top: 28px;
+  // }
+
+  // .close span:nth-of-type(2) {
+  //   opacity: 0;
+  // }
+
+  // .close span:nth-of-type(3) {
+  //   transform: rotate(-45deg);
+  //   top: 28px;
+  // }
 }
 
 
@@ -166,6 +381,29 @@ button {
 
 // お問い合わせボタン
 .title-bar>.title-items.-right {
+  // スマホでは表示しない
+  display: none;
+
+  @include mq(lg) {
+    display: flex;
+
+    >.questionbtn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      font-size: 1rem;
+      color: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+      background: linear-gradient(to right, #FA41CC, #6020B0);
+      padding: 0.5rem 2.5rem;
+    }
+  }
+}
+
+.header-right {
   // スマホでは表示しない
   display: none;
 
@@ -739,7 +977,24 @@ button {
       padding: 5px 16px;
     }
   }
-
+  >.submit {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    font-size: 1rem;
+    color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    background: linear-gradient(to right, #FA41CC, #6020B0);
+    padding: 0.5rem 2.5rem;
+    width: 155px;
+    margin: 0 auto;
+  }
+.end-message,.false-message{
+  display: none;
+}
   .input {
     margin-bottom: 1.8rem;
     width: 55%;

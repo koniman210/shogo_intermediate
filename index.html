@@ -23,10 +23,11 @@
     <!-- swiper読み込み -->
   </head>
   <body>
-    <!-- ヘッダー -->
+    <!--ヘッダー-->
     <header class="header-container">
-      <div class="title-bar">
-        <a class="title-items -left" href="#">
+      <div class="header-inner">
+        <!--▽▽ヘッダーロゴ▽▽-->
+        <div class="header-left">
           <img
             class="logo"
             src="../shogo_intermediate/img/Pink and Purple Events & party Entertainment Logo.png"
@@ -35,16 +36,43 @@
             height="47"
           />
           <h1 class="title">ユアコーディング</h1>
-        </a>
-        <ul class="title-items -center">
-          <li class="item">特徴</li>
-          <li class="item">価格</li>
-          <li class="item">お問い合わせ</li>
-        </ul>
-        <div class="title-items -right">
+        </div>
+        <!--△△ヘッダーロゴ△△-->
+
+        <!--▽▽ハンバーガーメニュー▽▽-->
+        <div id="hamburger">
+          <div class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <!--△△ハンバーガーメニュー△△-->
+
+        <!--▽▽ハンバーガーメニューのリスト▽▽-->
+        <nav class="sm">
+          <ul class="menu-list">
+            <li class="menu"><a href="#contact">特徴</a></li>
+            <li class="menu"><a href="#">価格</a></li>
+            <li class="menu"><a href="#">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <!--△△ハンバーガーメニューのリスト△△-->
+
+        <!--▽▽ヘッダーリスト▽▽-->
+        <nav class="pc">
+          <!--pcクラスを追記-->
+          <ul class="menu-list">
+            <li class="item"><a class="menu" href="#contact">特徴</a></li>
+            <li class="item"><a class="menu" href="#">価格</a></li>
+            <li class="item"><a class="menu" href="#">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
           <a class="questionbtn" href="#contact">お問い合わせ</a>
         </div>
       </div>
+      <!--△△ヘッダーリスト△△-->
     </header>
     <!-- 概要 -->
     <section class="sec-summary">
@@ -289,6 +317,8 @@
         </ul>
       </div>
     </section>
+    <!-- https://docs.google.com/forms/u/0/d/e/1FAIpQLSfabOITD01BjI3e9p_ORsvZUkwIFpR8bdbu9b6j8atODaPqdw/formResponse -->
+
     <section id="contact" class="sec-contact">
       <h2 class="title">お問い合わせ</h2>
       <p class="subtitle">CONTACT</p>
@@ -296,21 +326,32 @@
         コーディングの人出が足りないとき、<br />
         あなたの力になります
       </p>
-      <div class="contact-form">
+      <form
+        class="contact-form"
+        id="contact-form"
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfabOITD01BjI3e9p_ORsvZUkwIFpR8bdbu9b6j8atODaPqdw/formResponse"
+      >
         <label class="label" for="">お名前</label>
-        <input class="input" type="text" />
+        <input class="input" type="text" name="entry.1224540866" />
         <label class="label" for="">メールアドレス</label>
-        <input class="input" type="text" />
+        <input class="input" type="text" name="entry.1985168315" />
         <label class="label" for="">お問い合わせ内容</label>
-        <textarea class="textarea" name="" id="" cols="30" rows="5"></textarea>
+        <textarea
+          class="textarea"
+          cols="30"
+          rows="5"
+          name="entry.25282114"
+        ></textarea>
         <div class="privacy-form">
           <input type="checkbox" id="privacy" class="checkbox" />
           <label for="privacy" class="privacy"
             >プライバシーポリシーに同意する</label
           >
         </div>
-        <button class="questionbtn">送信する</button>
-      </div>
+        <button type="submit" class="submit">送信する</button>
+        <p class="end-message">お問い合わせありがとうございました</p>
+        <p class="false-message">送信失敗です</p>
+      </form>
     </section>
     <footer class="footer-container">
       <p class="corpname">ユアコーディング</p>
@@ -419,5 +460,67 @@
         return false;
       });
     });
+
+    //ハンバーガーメニュー
+    $("#hamburger").on("click", function () {
+      $(".icon").toggleClass("close");
+      $(".sm").slideToggle();
+    });
+
+    // お問い合わせフォーム送信時の処理
+    $(document).ready(function () {
+      $("#contact-form").submit(function (event) {
+        let formData = $("#contact-form").serialize();
+        $.ajax({
+          url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfabOITD01BjI3e9p_ORsvZUkwIFpR8bdbu9b6j8atODaPqdw/formResponse",
+          data: formData,
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function () {
+              console.warn("OKOKO");
+              // お問い合わせありがとうメッセージを表示
+              $(".end-message").slideDown();
+              // 二回出来ないようにボタンを非表示
+              $(".submit").fadeOut();
+              // フォームの内容をリセット
+              document.getElementById("contact-form").reset();
+            },
+            200: function () {
+              console.warn("OKOKO");
+              var textForm = document.getElementsByClassName(".input");
+              textForm.value = "";
+              $(".false-message").slideDown();
+              $("#contact-form")[0].reset();
+            },
+          },
+        });
+        event.preventDefault();
+      });
+    });
+    // AOS.jsとヘッダー李ファクタ
   </script>
 </html>
+<!-- 
+・ヘッダーは固定（追随する）でお願いします。
+・SP版はPC版を参考に作成する（ハンバーガーメニュー設置など）
+　ヒント：余白やフォント周りに特に気を配ってみてください。
+・よくある質問のアコーディオンはデフォルトは１つ目のみ
+　開いている状態で（js利用）
+・制作実績部分はスライダーになるので、swiperを利用してください
+　その際、5秒おきに自動スワイプするようにしてください。
+　また、スマホで指でも左右にスワイプできるようにしてください。
+・AOS.jsなどで各々の要素をふわっと表示させる
+・「お問い合わせ」ボタンを押すと、お問い合わせフォームに
+　　スムーススクロールする ・フォントは Google Fontsの「Noto sans
+jp」を利用するようにお願いします
+・フォームの部分は全入力欄および「プライバシーポリシーに同意します」に
+チェックがないとsubmitできないようにする
+参考記事：https://shogo-log.com/submit-disabled/
+・余裕があれば、以下いずれか使用し、お問い合わせフォームを　動作するようにしてみる
+　①Googleフォームとの紐づけ↓ 　https://shogo-log.com/google-form-ajax/
+　②Responsive Mailform 　③WordPress化してフォーム設置
+・faviconについては、ロゴ画像を使用してください！
+・デザインが少しずれている部分がありますので、パーフェクトピクセルで
+ある必要はありませんが、それ以外は余白、サイズきちんと合わせるように
+お願いします。 その他確認事項はnoteのチェックリストをご活用ください。 -->
