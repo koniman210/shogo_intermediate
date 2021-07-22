@@ -109,7 +109,7 @@
             class="image"
           />
           <div class="content-container">
-            <p class="point">
+            <p class="point -top-margin">
               コーディングに特化したフリーランスのため、<br />
               スピード感を持った開発が可能。
             </p>
@@ -132,8 +132,7 @@
               デフォルトで行います。
             </p>
             <p class="explanation">
-              正しいマークアップで、<br />
-              内部SEOに強いコーディングを<br />
+              正しいマークアップで、 内部SEOに強いコーディングを<br />
               デフォルトで行います。
             </p>
           </div>
@@ -141,7 +140,7 @@
           <img
             src="../shogo_intermediate/img/building_website.png"
             alt="CTO 高速コーディング"
-            class="image"
+            class="image -top-margin"
           />
         </div>
       </section>
@@ -154,7 +153,7 @@
             class="image"
           />
           <div class="content-container">
-            <p class="point">
+            <p class="point -top-margin">
               原則いただいたメッセージは、<br />
               業務時間内であれば6時間以内に<br />
               お返しいたします。
@@ -417,7 +416,6 @@
       // 以下にオプションを設定
       slidesPerView: "auto",
       loop: true, //最後に達したら先頭に戻る
-      spaceBetween: 56, //レスポンシブ
       centeredSlides: true, // 中央に配置
       // allowTouchMove: false,
 
@@ -440,6 +438,14 @@
       // autoplay: {
       //   delay: 5000,
       // },
+      // レスポンシブブレーポイント（画面幅による設定）
+      spaceBetween: 30, //レスポンシブ
+      breakpoints: {
+        // 画面幅が 640px 以上の場合（window width >= 640px）
+        560: {
+          spaceBetween: 56, //レスポンシブ
+        },
+      },
     });
     // スクロール処理
     $(function () {

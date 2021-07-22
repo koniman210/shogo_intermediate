@@ -541,21 +541,39 @@ button {
 .sec-features>.content-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  @include mq(md){
+    justify-content: space-between;
+    flex-direction: row;
+  }
 
   // &:first-child{
   //   margin-right: 11.2rem
   // }
   >.image {
     display: block;
-    width: 40%;
     object-fit: cover;
     height: auto;
+    width: 70%;
+    @include mq(md){
+      width: 40%;
+      }
+  }
+  .-top-margin{
+    margin-top: 1.5rem;
+    @include mq(md){
+    margin-top: 0;
+
+    }
   }
 }
 
 .content-wrapper>.content-container {
-  @include mq(lg) {
+  //  SP時は真ん中
+text-align: center;
+@include mq(md) {
+    text-align: left;
 
     &.-left-padding {
       padding: 5rem;
@@ -640,12 +658,20 @@ button {
 
     >.title {
       padding-left: 1.35rem;
-      width: 40%;
+      width: 55%;
+
+      @include mq(lg){
+
+        width: 40%;
+      }
     }
 
     >.data {
+      width: 45%;
       padding-left: 2rem;
-      width: calc(100% - 40%);
+      @include mq(lg){
+        width: 60%;
+      }
     }
   }
 }
@@ -727,11 +753,21 @@ button {
 
 .blog-list {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
-
   justify-content: center;
-  // align-items: center;
-  padding: 1.5rem 5rem 0 5rem;
+  // padding: 1.5rem 5rem 0 5rem;
+  @include mq(md){
+  flex-direction: row;
+
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    margin-top: 0;
+
+    }
+  @include mq(lg){
+    padding: 1.5rem 5rem 0 5rem;
+    }
 }
 
 .blog-card {
@@ -739,6 +775,10 @@ button {
   height: 27.5rem;
   background-color: #FFFFFF;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  margin-bottom: 3rem;
+  @include mq(md){
+  margin-bottom: 0
+  }
 
   >.image {
     display: block;
@@ -777,7 +817,10 @@ button {
 }
 
 .blog-card:not(:first-child) {
-  margin-left: 2.15rem;
+  @include mq(md){
+
+    margin-left: 2.15rem;
+  }
 }
 
 // https://webukatu.com/wordpress/blog/6087/ 良くある質問アコーディオンにする
@@ -952,15 +995,16 @@ button {
 }
 
 .contact-form {
+  width: 80%;
   margin: 0 auto;
-  width: 66%;
   background-color: #FFF;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
   padding: 2.4rem 4.5rem;
+  @include mq(md){
+    width: 66%;
+  }
 
   >.label {
     display: block;
