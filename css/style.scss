@@ -1036,8 +1036,12 @@ text-align: center;
     width: 155px;
     margin: 0 auto;
   }
-.end-message,.false-message{
+  // お問い合わせボタン押した時のメッセージ
+.end-message,.false-message,.input-error-message{
   display: none;
+}
+.input-error-message,.false-message{
+  color: red;
 }
   .input {
     margin-bottom: 1.8rem;

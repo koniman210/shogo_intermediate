@@ -920,8 +920,12 @@ button {
   margin: 0 auto;
 }
 
-.contact-form .end-message, .contact-form .false-message {
+.contact-form .end-message, .contact-form .false-message, .contact-form .input-error-message {
   display: none;
+}
+
+.contact-form .input-error-message, .contact-form .false-message {
+  color: red;
 }
 
 .contact-form .input {

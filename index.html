@@ -333,7 +333,7 @@
         <label class="label" for="">お名前</label>
         <input class="input" type="text" name="entry.1224540866" />
         <label class="label" for="">メールアドレス</label>
-        <input class="input" type="text" name="entry.1985168315" />
+        <input class="input" type="email" name="entry.1985168315" />
         <label class="label" for="">お問い合わせ内容</label>
         <textarea
           class="textarea"
@@ -349,6 +349,7 @@
         </div>
         <button type="submit" class="submit">送信する</button>
         <p class="end-message">お問い合わせありがとうございました</p>
+        <p class="input-error-message">入力漏れがあります</p>
         <p class="false-message">送信失敗です</p>
       </form>
     </section>
@@ -488,7 +489,7 @@
               // お問い合わせありがとうメッセージを表示
               $(".end-message").slideDown();
               // 二回出来ないようにボタンを非表示
-              $(".submit").fadeOut();
+              // $(".submit").fadeOut();
               // フォームの内容をリセット
               document.getElementById("contact-form").reset();
             },
@@ -502,6 +503,23 @@
           },
         });
         event.preventDefault();
+      });
+    });
+    $(document).ready(function () {
+      const $submitBtn = $(".submit");
+      $("#contact-form input,#contact-form textarea").on("change", function () {
+        if (
+          $('#contact-form input[type="text"]').val() !== "" &&
+          $('#contact-form input[type="email"]').val() !== "" &&
+          $('#contact-form input[type="checkbox"]').val() !== "" &&
+          $("#contact-form #privacy").prop("checked") === true
+        ) {
+          $submitBtn.prop("disabled", false);
+          $(".input-error-message").slideUp();
+        } else {
+          $submitBtn.prop("disabled", true);
+          $(".input-error-message").slideDown();
+        }
       });
     });
     // AOS.jsとヘッダー李ファクタ
