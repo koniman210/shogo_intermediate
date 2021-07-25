@@ -12,6 +12,7 @@
     />
     <!-- <link rel="stylesheet" href="./css/reset.css" /> -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
     <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css" />
     <link
       rel="stylesheet"
@@ -38,38 +39,32 @@
           <h1 class="title">ユアコーディング</h1>
         </div>
         <!--△△ヘッダーロゴ△△-->
-
-        <!--▽▽ハンバーガーメニュー▽▽-->
-        <div id="hamburger">
-          <div class="icon">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="portal-layout">
+          <div class="nav-menu">
+            <ul class="menu-list">
+              <li class="item"><a class="link" href="#contact">特徴</a></li>
+              <li class="item"><a class="link" href="#contact">価格</a></li>
+              <li class="item">
+                <a class="link" href="#contact">お問い合わせ</a>
+              </li>
+            </ul>
+          </div>
+          <button class="menu"><span></span><span></span><span></span></button>
+        </div>
+        <!-- pｃ時のメニュー(横並び) -->
+        <div class="pc-layout">
+          <div class="nav-menu">
+            <ul class="menu-list">
+              <li class="item"><a class="link" href="#contact">特徴</a></li>
+              <li class="item"><a class="link" href="#contact">価格</a></li>
+              <li class="item">
+                <a class="link" href="#contact">お問い合わせ</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <!--△△ハンバーガーメニュー△△-->
-
-        <!--▽▽ハンバーガーメニューのリスト▽▽-->
-        <nav class="sm">
-          <ul class="menu-list">
-            <li class="menu"><a href="#contact">特徴</a></li>
-            <li class="menu"><a href="#">価格</a></li>
-            <li class="menu"><a href="#">お問い合わせ</a></li>
-          </ul>
-        </nav>
-        <!--△△ハンバーガーメニューのリスト△△-->
-
-        <!--▽▽ヘッダーリスト▽▽-->
-        <nav class="pc">
-          <!--pcクラスを追記-->
-          <ul class="menu-list">
-            <li class="item"><a class="menu" href="#contact">特徴</a></li>
-            <li class="item"><a class="menu" href="#">価格</a></li>
-            <li class="item"><a class="menu" href="#">お問い合わせ</a></li>
-          </ul>
-        </nav>
         <div class="header-right">
-          <a class="questionbtn" href="#contact">お問い合わせ</a>
+          <a class="contactbtn" href="#contact">お問い合わせ</a>
         </div>
       </div>
       <!--△△ヘッダーリスト△△-->
@@ -88,7 +83,7 @@
           デザインに注力されたい方の<br />
           助けになります
         </p>
-        <button class="questionbtn">お問い合わせ</button>
+        <button class="contactbtn">お問い合わせ</button>
         <img
           src="../shogo_intermediate/img/manager.png"
           alt="マネージャー 忙しそうに仕事しているマネージャ-"
@@ -523,6 +518,20 @@
       });
     });
     // AOS.jsとヘッダー李ファクタ
+    // ハンバーガーメニューをクリック。nav-menu、menuにアクティブクラスを付与
+    $(function () {
+      $(".menu").on("click", function () {
+        $(this).toggleClass("active");
+        $(".nav-menu").toggleClass("active");
+      });
+    });
+    // リンクをクリックした時にアクティブクラスを外す
+    $(function () {
+      $(".nav-menu a").on("click", function () {
+        $(".nav-menu").toggleClass("active");
+        $(".menu").toggleClass("active");
+      });
+    });
   </script>
 </html>
 <!-- 
