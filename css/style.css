@@ -109,12 +109,19 @@ html {
   background-image: url("../../shogo_intermediate/img/楕円形 1.svg");
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: top -8rem left 60%;
+  background-position: top -10rem left 60%;
 }
 
 @media screen and (min-width: 960px) {
   .sec-summary {
-    background-position: top -8rem right -15%;
+    background-position: top -10rem right -15%;
+  }
+}
+
+@media screen and (min-width: 960px) and (min-width: 1366px) {
+  .sec-summary {
+    background-size: 60vw;
+    background-position: top -10rem right -30%;
   }
 }
 
@@ -139,6 +146,8 @@ html {
   line-height: 1.7rem;
   font-weight: bold;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 3;
 }
 
 .sec-summary > .summary-container > .contactbtn {
@@ -156,7 +165,7 @@ html {
 }
 
 .sec-summary > .summary-container > .image {
-  width: 40%;
+  width: 50vw;
   position: absolute;
   top: 35%;
   right: 0%;

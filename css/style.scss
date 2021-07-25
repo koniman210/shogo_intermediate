@@ -164,10 +164,16 @@ $table-border-color:#E5E5E5;
   background-image: url("../../shogo_intermediate/img/楕円形 1.svg");
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: top -8rem left 60%;
+  background-position: top -10rem left 60%;
 
   @include mq(lg) {
-    background-position: top -8rem right -15%;
+    background-position: top -10rem right -15%;
+
+    // 画面幅が大きくなった時に画像が伸びるように設定
+    @media screen and (min-width:1366px) {
+      background-size: 60vw;
+      background-position: top -10rem right -30%;
+    }
   }
 
   // 大枠
@@ -193,6 +199,8 @@ $table-border-color:#E5E5E5;
       line-height: 1.7rem;
       font-weight: bold;
       margin-bottom: 3rem;
+      position: relative;
+      z-index: 3;
     }
 
     // お問い合わせボタン
@@ -201,7 +209,8 @@ $table-border-color:#E5E5E5;
     }
 
     >.image {
-      width: 40%;
+      // width: 40%;
+      width: 50vw;
       position: absolute;
       top: 35%;
       right: 0%;
@@ -771,22 +780,24 @@ $table-border-color:#E5E5E5;
 }
 
 // PC時は横並びのリスト表示
-.pc-layout >.nav-menu >.menu-list {
+.pc-layout>.nav-menu>.menu-list {
 
-    display: flex;
-    font-weight: bold;
-    font-size: 1.15rem;
-    color: $base-white-color;
+  display: flex;
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: $base-white-color;
 
-    @include mq(lg) {
-      color: $base-font-color;
+  @include mq(lg) {
+    color: $base-font-color;
+    padding-right: 3.2rem;
+
+    .item:not(:nth-last-child(1)) {
       padding-right: 3.2rem;
-      .item:not(:nth-last-child(1)) {
-        padding-right: 3.2rem;
-      }
-    
+    }
+
   }
 }
+
 // ▼▼▼▼ここからハンバーガーメニュー三本線。動き込み(✖︎に変形)▼▼▼▼
 .menu,
 .menu span {
@@ -837,44 +848,50 @@ $table-border-color:#E5E5E5;
   -webkit-transform: translateY(-10px) rotate(-45deg);
   transform: translateY(-10px) rotate(-45deg);
 }
+
 // ▲▲▲▲▲ここまでハンバーガーメニュー三本線。動き込み▲▲▲▲▲
-.portal-layout >.nav-menu {
+.portal-layout>.nav-menu {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 10;
   width: 100%;
   opacity: 0;
-  background:rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease-in-out;
   visibility: hidden;
-  padding-top:6.7rem;
-// リスト表示時
+  padding-top: 6.7rem;
+
+  // リスト表示時
   &.active {
     right: 0;
     opacity: 1;
     -moz-transform: translateX(0);
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    visibility: visible;}
+    visibility: visible;
+  }
 }
 
 // リスト表示時
-.portal-layout >.nav-menu >.menu-list >.item {
+.portal-layout>.nav-menu>.menu-list>.item {
   border-bottom: solid 1px $base-font-color;
-  &:first-child{
-    border-top: solid 1px $base-font-color;;
+
+  &:first-child {
+    border-top: solid 1px $base-font-color;
+    ;
   }
-  > .link{
+
+  >.link {
     display: block;
-  padding: 1.5rem 0;
-  transition: all 0.2s ease-in-out;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
+    padding: 1.5rem 0;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
   }
-  &:hover{
+
+  &:hover {
     background: pink;
   }
 }
-
