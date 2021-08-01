@@ -161,7 +161,7 @@ $table-border-color:#E5E5E5;
   width: 100%;
   padding: 0 2rem;
   // 円形の背景
-  background-image: url("../../shogo_intermediate/img/楕円形 1.svg");
+  background-image: url("../img/楕円形 1.svg");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: top -10rem left 60%;
@@ -450,6 +450,7 @@ $table-border-color:#E5E5E5;
     opacity: 1;
     line-height: 1.85rem;
     height: auto;
+    text-align: center;//大画面になると左寄せに違和感があるので真ん中にした
   }
 
   //  最初の一つは開いておく
