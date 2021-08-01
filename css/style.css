@@ -150,7 +150,7 @@ html {
   z-index: 3;
 }
 
-.sec-summary > .summary-container > .contactbtn {
+.sec-summary > .summary-container > .contact-btn > .contactbtn {
   background-color: transparent;
   border: none;
   cursor: pointer;

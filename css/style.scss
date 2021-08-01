@@ -204,8 +204,8 @@ $table-border-color:#E5E5E5;
     }
 
     // お問い合わせボタン
-    >.contactbtn {
-      @include contactBtn()
+    >.contact-btn >.contactbtn {
+      @include contactBtn();
     }
 
     >.image {
