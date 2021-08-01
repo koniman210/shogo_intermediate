@@ -305,6 +305,11 @@ $table-border-color:#E5E5E5;
 
   @include mq(md) {
     text-align: left;
+    padding-left: 3rem;
+  }
+
+  @include mq(lg) {
+    padding-left: 0;
 
     &.-left-padding {
       padding: 5rem;
