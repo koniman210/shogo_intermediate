@@ -61,7 +61,7 @@ $table-border-color:#E5E5E5;
 // ヘッダー
 .header-container {
   box-shadow: $default-bax-shadow;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 5;
   background-color: $base-white-color;
@@ -382,6 +382,7 @@ $table-border-color:#E5E5E5;
 
     >.title {
       padding-left: 1.35rem;
+      padding-right: 1.35rem;
       width: 55%;
 
       @include mq(lg) {

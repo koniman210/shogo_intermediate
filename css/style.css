@@ -31,7 +31,7 @@ html {
  */
 .header-container {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 5;
   background-color: #fff;
@@ -345,6 +345,7 @@ html {
 
 .sec-price > .price-table > .title {
   padding-left: 1.35rem;
+  padding-right: 1.35rem;
   width: 55%;
 }
 

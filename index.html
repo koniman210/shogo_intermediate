@@ -23,12 +23,12 @@
     />
     <!-- swiper読み込み -->
   </head>
-  <body>
+  <body id="top">
     <!--ヘッダー-->
     <header class="header-container">
       <div class="header-inner">
         <!--▽▽ヘッダーロゴ▽▽-->
-        <div class="header-left">
+        <a class="header-left" href="#top">
           <img
             class="logo"
             src="../shogo_intermediate/img/Pink and Purple Events & party Entertainment Logo.png"
@@ -37,7 +37,7 @@
             height="47"
           />
           <h1 class="title">ユアコーディング</h1>
-        </div>
+        </a>
         <!--△△ヘッダーロゴ△△-->
         <div class="portal-layout">
           <div class="nav-menu">
@@ -443,6 +443,7 @@
         },
       },
     });
+    // https://qiita.com/Garyuten/items/0454a14cbda320882997x
     // スクロール処理
     $(function () {
       // #で始まるa要素をクリックした場合に処理
@@ -450,7 +451,7 @@
         // 移動先を調整する。ヘッダーを固定しているのでヘッダー分ずらす。
         let adjust = $(".header-container").outerHeight();
         // スクロールの速度（ミリ秒）
-        let speed = 1000;
+        let speed = 800;
         // アンカーの値取得 リンク先（href）を取得して、hrefという変数に代入
         let href = $(this).attr("href");
         // 移動先を取得 リンク先(href)のidがある要素を探して、targetに代入
@@ -462,7 +463,6 @@
         return false;
       });
     });
-
     //ハンバーガーメニュー
     $("#hamburger").on("click", function () {
       $(".icon").toggleClass("close");
@@ -534,26 +534,3 @@
     });
   </script>
 </html>
-<!-- 
-・ヘッダーは固定（追随する）でお願いします。
-・SP版はPC版を参考に作成する（ハンバーガーメニュー設置など）
-　ヒント：余白やフォント周りに特に気を配ってみてください。
-・よくある質問のアコーディオンはデフォルトは１つ目のみ
-　開いている状態で（js利用）
-・制作実績部分はスライダーになるので、swiperを利用してください
-　その際、5秒おきに自動スワイプするようにしてください。
-　また、スマホで指でも左右にスワイプできるようにしてください。
-・AOS.jsなどで各々の要素をふわっと表示させる
-・「お問い合わせ」ボタンを押すと、お問い合わせフォームに
-　　スムーススクロールする ・フォントは Google Fontsの「Noto sans
-jp」を利用するようにお願いします
-・フォームの部分は全入力欄および「プライバシーポリシーに同意します」に
-チェックがないとsubmitできないようにする
-参考記事：https://shogo-log.com/submit-disabled/
-・余裕があれば、以下いずれか使用し、お問い合わせフォームを　動作するようにしてみる
-　①Googleフォームとの紐づけ↓ 　https://shogo-log.com/google-form-ajax/
-　②Responsive Mailform 　③WordPress化してフォーム設置
-・faviconについては、ロゴ画像を使用してください！
-・デザインが少しずれている部分がありますので、パーフェクトピクセルで
-ある必要はありませんが、それ以外は余白、サイズきちんと合わせるように
-お願いします。 その他確認事項はnoteのチェックリストをご活用ください。 -->
