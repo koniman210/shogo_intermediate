@@ -115,7 +115,13 @@ $table-border-color:#E5E5E5;
 
 @mixin secSubTitle() {
   color: #3BA6C9;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+
+  @include mq(md) {
+    font-size: 1.15rem;
+  }
+
+  ;
   line-height: 1.7rem;
   font-weight: bold;
   text-align: center;
@@ -195,7 +201,13 @@ $table-border-color:#E5E5E5;
 
     // 内容
     >.content {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
+
+      @include mq(md) {
+        font-size: 1.15rem;
+      }
+
+      ;
       line-height: 1.7rem;
       font-weight: bold;
       margin-bottom: 3rem;
@@ -204,7 +216,7 @@ $table-border-color:#E5E5E5;
     }
 
     // お問い合わせボタン
-    >.contact-btn >.contactbtn {
+    >.contact-btn>.contactbtn {
       @include contactBtn();
     }
 
@@ -325,11 +337,17 @@ $table-border-color:#E5E5E5;
   }
 
   >.explanation {
-    font-size: 1.15rem;
-    font-weight: bold;
-    line-height: 1.8rem;
+    font-size: 1.2rem;
+
+    @include mq(md) {
+      font-size: 1.15rem;
+    }
   }
+
+  font-weight: bold;
+  line-height: 1.8rem;
 }
+
 
 // 価格セクション
 .sec-price {
@@ -349,7 +367,13 @@ $table-border-color:#E5E5E5;
   }
 
   >.caution {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+
+    @include mq(md) {
+      font-size: 1.15rem;
+    }
+
+    ;
     font-weight: bold;
     text-align: center;
     padding-top: 2.5rem;
@@ -379,7 +403,13 @@ $table-border-color:#E5E5E5;
       /* 各セルの右の線。テーブルの右の線も補える。 */
       box-sizing: border-box;
       /* widthの計算を楽にするため */
-      font-size: 1.15rem;
+      font-size: 1.2rem;
+
+      @include mq(md) {
+        font-size: 1.15rem;
+      }
+
+      ;
       font-weight: bold;
       padding-top: 2.5rem;
       padding-bottom: 2.5rem;
@@ -450,7 +480,7 @@ $table-border-color:#E5E5E5;
     opacity: 1;
     line-height: 1.85rem;
     height: auto;
-    text-align: center;//大画面になると左寄せに違和感があるので真ん中にした
+    text-align: center; //大画面になると左寄せに違和感があるので真ん中にした
   }
 
   //  最初の一つは開いておく
@@ -564,6 +594,10 @@ $table-border-color:#E5E5E5;
     margin-bottom: 3.85rem;
   }
 
+  .work-wrapper {
+    padding-bottom: 1px;
+  }
+
   // スライド
   .swiper-slide {
     width: 23rem;
@@ -621,7 +655,13 @@ $table-border-color:#E5E5E5;
 
   .catchcopy {
     color: $base-white-color;
-    font-size: 1.15rem; //16px
+    font-size: 1.2rem;
+
+    @include mq(md) {
+      font-size: 1.15rem;
+    }
+
+    ; //16px
     line-height: 1.7rem;
     // font-weight: bold;
     text-align: center;
@@ -752,7 +792,13 @@ $table-border-color:#E5E5E5;
 
   >.rule-list {
     display: flex;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+
+    @include mq(md) {
+      font-size: 1.15rem;
+    }
+
+    ;
     font-weight: bold;
     margin-bottom: 3.7rem;
 
@@ -790,7 +836,13 @@ $table-border-color:#E5E5E5;
 
   display: flex;
   font-weight: bold;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+
+  @include mq(md) {
+    font-size: 1.15rem;
+  }
+
+  ;
   color: $base-white-color;
 
   @include mq(lg) {

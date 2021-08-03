@@ -142,12 +142,18 @@ html {
 }
 
 .sec-summary > .summary-container > .content {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: bold;
   margin-bottom: 3rem;
   position: relative;
   z-index: 3;
+}
+
+@media screen and (min-width: 560px) {
+  .sec-summary > .summary-container > .content {
+    font-size: 1.15rem;
+  }
 }
 
 .sec-summary > .summary-container > .contact-btn > .contactbtn {
@@ -198,11 +204,17 @@ html {
 
 .features-container > .subtitle {
   color: #3BA6C9;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: bold;
   text-align: center;
   margin-top: 0;
+}
+
+@media screen and (min-width: 560px) {
+  .features-container > .subtitle {
+    font-size: 1.15rem;
+  }
 }
 
 .features-container > .sec-features {
@@ -257,6 +269,8 @@ html {
 
 .content-wrapper > .content-container {
   text-align: center;
+  font-weight: bold;
+  line-height: 1.8rem;
 }
 
 @media screen and (min-width: 560px) {
@@ -283,9 +297,13 @@ html {
 }
 
 .content-wrapper > .content-container > .explanation {
-  font-size: 1.15rem;
-  font-weight: bold;
-  line-height: 1.8rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 560px) {
+  .content-wrapper > .content-container > .explanation {
+    font-size: 1.15rem;
+  }
 }
 
 .sec-price {
@@ -305,7 +323,7 @@ html {
 
 .sec-price > .subtitle {
   color: #3BA6C9;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: bold;
   text-align: center;
@@ -313,12 +331,24 @@ html {
   margin-bottom: 5rem;
 }
 
+@media screen and (min-width: 560px) {
+  .sec-price > .subtitle {
+    font-size: 1.15rem;
+  }
+}
+
 .sec-price > .caution {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
   padding-top: 2.5rem;
   padding-bottom: 4.85rem;
+}
+
+@media screen and (min-width: 560px) {
+  .sec-price > .caution {
+    font-size: 1.15rem;
+  }
 }
 
 .sec-price > .price-table {
@@ -344,10 +374,17 @@ html {
   /* 各セルの右の線。テーブルの右の線も補える。 */
   box-sizing: border-box;
   /* widthの計算を楽にするため */
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: bold;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 560px) {
+  .sec-price > .price-table > .title,
+  .sec-price > .price-table > .data {
+    font-size: 1.15rem;
+  }
 }
 
 .sec-price > .price-table > .title {
@@ -388,12 +425,18 @@ html {
 
 .sec-question > .subtitle {
   color: #3BA6C9;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: bold;
   text-align: center;
   margin-top: 0;
   margin-bottom: 2.3rem;
+}
+
+@media screen and (min-width: 560px) {
+  .sec-question > .subtitle {
+    font-size: 1.15rem;
+  }
 }
 
 .accordion-menu {
@@ -447,12 +490,18 @@ html {
 
 .sec-blog > .subtitle {
   color: #3BA6C9;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: bold;
   text-align: center;
   margin-top: 0;
   margin-bottom: 3.85rem;
+}
+
+@media screen and (min-width: 560px) {
+  .sec-blog > .subtitle {
+    font-size: 1.15rem;
+  }
 }
 
 .blog-list {
@@ -544,12 +593,22 @@ html {
 
 .sec-works > .subtitle {
   color: #3BA6C9;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: bold;
   text-align: center;
   margin-top: 0;
   margin-bottom: 3.85rem;
+}
+
+@media screen and (min-width: 560px) {
+  .sec-works > .subtitle {
+    font-size: 1.15rem;
+  }
+}
+
+.sec-works .work-wrapper {
+  padding-bottom: 1px;
 }
 
 .sec-works .swiper-slide {
@@ -604,7 +663,7 @@ html {
 
 .sec-contact > .subtitle {
   color: #3BA6C9;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   font-weight: bold;
   text-align: center;
@@ -613,12 +672,24 @@ html {
   margin-bottom: 3.85rem;
 }
 
+@media screen and (min-width: 560px) {
+  .sec-contact > .subtitle {
+    font-size: 1.15rem;
+  }
+}
+
 .sec-contact .catchcopy {
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.7rem;
   text-align: center;
   margin-bottom: 3.15rem;
+}
+
+@media screen and (min-width: 560px) {
+  .sec-contact .catchcopy {
+    font-size: 1.15rem;
+  }
 }
 
 .contact-form {
@@ -734,9 +805,15 @@ html {
 
 .footer-container > .rule-list {
   display: flex;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 3.7rem;
+}
+
+@media screen and (min-width: 560px) {
+  .footer-container > .rule-list {
+    font-size: 1.15rem;
+  }
 }
 
 .footer-container > .rule-list > .privacy {
@@ -766,8 +843,14 @@ html {
 .pc-layout > .nav-menu > .menu-list {
   display: flex;
   font-weight: bold;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: #fff;
+}
+
+@media screen and (min-width: 560px) {
+  .pc-layout > .nav-menu > .menu-list {
+    font-size: 1.15rem;
+  }
 }
 
 @media screen and (min-width: 960px) {
