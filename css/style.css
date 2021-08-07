@@ -744,6 +744,8 @@ html {
 .contact-form .false-message,
 .contact-form .input-error-message {
   display: none;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .contact-form .input-error-message,

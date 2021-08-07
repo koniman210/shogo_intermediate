@@ -727,6 +727,8 @@ $table-border-color:#E5E5E5;
   .false-message,
   .input-error-message {
     display: none;
+    text-align: center;
+    margin-top: 1rem;
   }
 
   .input-error-message,
